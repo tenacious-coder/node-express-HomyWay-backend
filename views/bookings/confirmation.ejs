@@ -1,0 +1,31 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container py-5">
+  <!-- Success Alert -->
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+    <i class="bi bi-check-circle-fill me-2"></i>
+    <strong>Your booking has been confirmed!</strong>
+  </div>
+
+  <!-- Booking Details Card -->
+  <div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body p-4">
+      <h4 class="fw-bold text-success mb-4">
+        <i class="bi bi-info-circle-fill me-2"></i>Booking Details
+      </h4>
+
+      <ul class="list-unstyled mb-4">
+        <li><strong>Listing:</strong><%= booking.listing.title %></li>
+        <li><strong>Location:</strong> <%= booking.listing.location %></li>
+        <li><strong>Check-in:</strong> <%= booking.checkIn.toDateString() %></li>
+        <li><strong>Check-out:</strong><%= booking.checkOut.toDateString() %> </li>
+        <li><strong>Total Price:</strong> $<%= booking.totalPrice %></li>
+      </ul>
+
+      <div class="d-flex gap-3">
+       <a href="/bookings/my" class="btn btn-primary">View My Bookings</a>
+        <a href="/listings/<%= booking.listing._id %>" class="btn btn-secondary">Back to Listing</a>
+      </div>
+    </div>
+  </div>
+</div>

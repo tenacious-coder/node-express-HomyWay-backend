@@ -9,14 +9,10 @@ const {validateReview , isLoggedIn, isReviewAuthor} = require("../middleware.js"
 
   //review post route
   router.post("/",isLoggedIn, validateReview, wrapAsync(async(req,res)=>{
-
-    let listing = await Listing.findById(req.params.id);
-    if(!listing){
-        throw new ExpressError("404", "listing not found");
-    }
+  let listing = await Listing.findById(req.params.id);
     let newReview = new Review(req.body.review);
+    console.log(newReview);
   newReview.author = req.user._id;
-  console.log(newReview);
     listing.reviews.push(newReview);
   
     await newReview.save();
@@ -32,7 +28,7 @@ const {validateReview , isLoggedIn, isReviewAuthor} = require("../middleware.js"
     isReviewAuthor,
     wrapAsync(async(req,res) => {
       let{ id, reviewId} = req.params;
-      await Listing.findByIdAndUpdate(id, {pull: {reviews: reviewId}}); // here pull signify that we can access thstbrecord that is present inside the listing inside review array
+      await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}}); // here pull signify that we can access thstbrecord that is present inside the listing inside review array
       await Review.findByIdAndDelete(reviewId);
   req.flash("success", "New Review Deleted");
       res.redirect(`/listings/${id}`);
@@ -40,3 +36,4 @@ const {validateReview , isLoggedIn, isReviewAuthor} = require("../middleware.js"
   ); 
 
   module.exports = router;
+

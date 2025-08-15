@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 const review = require("./review.js");
 
 const reviewSchema = new Schema({
-    comment:{
+    body:{
         type:String,
+        required:true
     },
     rating:{
         type: Number,
@@ -21,4 +22,4 @@ const reviewSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model("Review", reviewSchema);
+module.exports = mongoose.model("Review", reviewSchema); 

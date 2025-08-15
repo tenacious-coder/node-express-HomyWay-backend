@@ -21,7 +21,15 @@ module.exports.isLoggedIn =(req, res, next)=> {
 
 module.exports.isOwner = async(req, res, next)=>{
     let{id} = req.params;
-    let listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).populate("owner");
+    if(!listing){
+      req.flash("error","Listing not found");
+      return res.redirect("/listiings");
+    }
+    if(!listing.owner || !listing.owner._id || !res.locals.currUser || !res.locals.currUser._id){
+      req.flash("error","Unauthorized access");
+       return res.redirect(`/listings/${id}`);
+    }
    if(!listing.owner._id.equals(res.locals.currUser._id)) {
     req.flash("error","You are not the owner of this listing");
      return res.redirect(`/listings/${id}`);
