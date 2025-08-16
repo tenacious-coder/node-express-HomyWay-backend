@@ -75,7 +75,8 @@ const sessionsOptions ={
         expires: Date.now() + 7*24*60*60*1000, // info will be stored till 1 week  
         maxAge: 7*24*60*60*1000,
         httpOnly: true, // to protect from aatacks such as cross scripting
-        secure: process.env.NODE_ENV ==="production",
+        secure: process.env.NODE_ENV ==="production"?true:false,
+        sameSite: process.env.NODE_ENV === "production"? "none" : "lax",
     },
 };
 
