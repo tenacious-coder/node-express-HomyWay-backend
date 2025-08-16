@@ -100,34 +100,38 @@ app.use((req, res,next)=>{
 });
 
 app.get("/demouser", async(req,res)=>{
+    try{
     let fakeUser =new User({
         email:"student@gmail.com",
         username: "delta-student"
 });
  
- let = User.register(fakeUser, "helloworld");
- res.send(registeredUser);
+let registeredUser = await User.register(fakeUser,"helloworld");
+  res.send(registeredUser);
+} catch (e) {
+    res.send(e.message);
+}
 });
 
 app.get("/", async(req,res)=>{
     try{
         const allListings = await Listing.find({});
-        res.render("listings/inex",{allListings});
+        res.render("listings/index",{ allListings });
     } catch(e){
         next(e);
     }
     }
 );
 
-app.use ("/", userRouter);
+
 app.use ("/listings", listingRouter);
-// app.use ("/", listingRouter);
 app.use ("/listings/:id/reviews", reviewRouter);
 app.use ("/bookings",bookingRoutes);
+app.use("/",userRouter);
 
-app.all("*",(req,res,next) => {
-    next(new ExpressError(404, "Page not found!"));
-});
+// app.all("*",(req,res,next) => {
+//     next(new ExpressError(404, "Page not found!"));
+// });
 
 //middleware to handel async erors
 app.use((err,req,res,next)=>{
@@ -137,5 +141,5 @@ res.status(statusCode).render("error.ejs",{ err });
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT,"0.0.0.0",()=>{
-    console.log("server is listening on port ${PORT");
+    console.log("server is listening on port ${PORT}");
 });
