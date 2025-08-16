@@ -100,10 +100,10 @@ app.get("/demouser", async(req,res)=>{
 
 
 app.use ("/listings", listingRouter);
+app.use ("/", listingRouter);
 app.use ("/listings/:id/reviews", reviewRouter);
 app.use ("/", userRouter);
 app.use ("/bookings",bookingRoutes);
-app.use("/", categoryRoutes);
 
 
 //middleware to handel async erors
