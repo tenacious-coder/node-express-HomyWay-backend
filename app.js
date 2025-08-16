@@ -51,7 +51,7 @@ const store = MongoStore.create({
     touchAfter: 24*3600,
 });
 
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("EROR IN MONGO SESSION STORE",err);
 });
 
@@ -64,6 +64,7 @@ const sessionsOptions ={
         expires: Date.now() + 7*24*60*60*1000, // info will be stored till 1 week  
         maxAge: 7*24*60*60*1000,
         httpOnly: true, // to protect from aatacks such as cross scripting
+        secure: process.env.NODE_ENV ==="production",
     },
 };
 
