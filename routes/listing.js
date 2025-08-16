@@ -81,7 +81,7 @@ res.render("listings/show", { listing });
     return res.redirect("/listings")
  }
    let originalImageUrl = listing.image.url;
-   originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_10,w_10,c_fill");
+   originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_20,w_20,c_fill");
     res.render("listings/edit", {listing, originalImageUrl});
   })
  );

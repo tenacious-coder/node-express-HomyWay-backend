@@ -8,9 +8,9 @@ const app=express();
 const mongoose= require("mongoose");
 const path=require("path");
 const methodOverride=require("method-override");
-const ejsMate=require("ejs-mate");
+const ejsMate = require("ejs-mate");
 const session = require("express-session") ;
-const MongoStore = require('connect-mongo')// for storing sessions
+const MongoStore = require('connect-mongo');// for storing sessions
 const flash= require ("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -23,7 +23,7 @@ const bookingRoutes = require('./routes/bookings');
 const categoryRoutes = require('./routes/category');
 
 
-// const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";  // mongodb connection string
+
 const dbURL = process.env.ATLASDB_URL;
 
  main().then(()=>{
@@ -56,8 +56,8 @@ store.on("error",()=>{
 });
 
 const sessionsOptions ={
+    store: store,
     secret: process.env.SECRET,
-    store,
     resave: false,
     saveUninitialized: true,
     cookie:{
@@ -68,9 +68,7 @@ const sessionsOptions ={
 };
 
 
-// app.get("/",(req,res)=>{
-//     res.send("hi, i m root");
-// });
+
 
 app.use(session(sessionsOptions));
 app.use(flash());
@@ -107,16 +105,13 @@ app.use ("/bookings",bookingRoutes);
 app.use("/", categoryRoutes);
 
 
-// app.all("*",(req, res, next)=>{
-//   next(new ExpressError(404,"Page Not Found!"));
-// })
-
 //middleware to handel async erors
 app.use((err,req,res,next)=>{
 const{statusCode = 500, message = "somrthing went wrong"} = err;
 res.status(statusCode).render("error.ejs",{ err });
 });
 
-app.listen(8080,()=>{
-    console.log("server is listening");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT,"0.0.0.0",()=>{
+    console.log("server is listening on port ${PORT");
 });
