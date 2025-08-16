@@ -13,7 +13,7 @@ const ExpressError = require("../utils/ExpressError.js");
 // index route 
 router.get("/",wrapAsync(async(req, res)=>{
    const allListings = await Listing.find({});
-  res.render("listings/index", { allListings, category:"All" });
+  res.render("listings/index", { allListings });
 }));
 
 //new route

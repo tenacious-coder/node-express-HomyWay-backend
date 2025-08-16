@@ -58,20 +58,7 @@ router.get("/logout",(req, res)=>{
     });
 });
 
-// router.get("/bookings",async(req,res) => {
-//     try{
-//         if(!req.isAuthenticated()){
-//             req.flash("error","You must be logged in to view your bookings");
-//             return res.redirect("/login");
-//         }
-//         const bookings= await Booking.find({user: req.user._id}).populate("listing");
-//         res.render("users/bookings",{bookings});
-//     } catch(err){
-//         console.error(err);
-//         req.flash("error", "Unable to load bookings");
-//         res.redirect("/listings");
-//     }
-// });
+
 
 module.exports = router;
 
