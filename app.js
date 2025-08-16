@@ -49,6 +49,8 @@ async function main(){
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
+app.set("trust proxy", 1);
+
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
@@ -67,7 +69,7 @@ store.on("error",(err)=>{
 });
 
 const sessionsOptions ={
-    store: store,
+     store,
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
@@ -100,19 +102,19 @@ app.use((req, res,next)=>{
     next();
 });
 
-app.get("/demouser", async(req,res)=>{
-    try{
-    let fakeUser =new User({
-        email:"student@gmail.com",
-        username: "delta-student"
-});
+// app.get("/demouser", async(req,res)=>{
+//     try{
+//     let fakeUser =new User({
+//         email:"student@gmail.com",
+//         username: "delta-student"
+// });
  
-let registeredUser = await User.register(fakeUser,"helloworld");
-  res.send(registeredUser);
-} catch (e) {
-    res.send(e.message);
-}
-});
+// let registeredUser = await User.register(fakeUser,"helloworld");
+//   res.send(registeredUser);
+// } catch (e) {
+//     res.send(e.message);
+// }
+// });
 
 app.get("/", async(req,res)=>{
     try{
@@ -124,11 +126,10 @@ app.get("/", async(req,res)=>{
     }
 );
 
-
+app.use("/",userRouter);
 app.use ("/listings", listingRouter);
 app.use ("/listings/:id/reviews", reviewRouter);
 app.use ("/bookings",bookingRoutes);
-app.use("/",userRouter);
 
 // app.all("*",(req,res,next) => {
 //     next(new ExpressError(404, "Page not found!"));
