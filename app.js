@@ -15,12 +15,23 @@ const flash= require ("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Listing = require("./models/listing.js");
+const ExpressError = require("./utils/ExpressError.js");
+
+// app.get("/", async(req,res)=>{
+//     try{
+//         const allListings = await Listing.find({});
+//         res.render("listings/inex",{allListings});
+//     } catch(e){
+//         next(e);
+//     }
+//     }
+// );
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const bookingRoutes = require('./routes/bookings');
-const categoryRoutes = require('./routes/category');
 
 
 
@@ -98,13 +109,25 @@ app.get("/demouser", async(req,res)=>{
  res.send(registeredUser);
 });
 
+app.get("/", async(req,res)=>{
+    try{
+        const allListings = await Listing.find({});
+        res.render("listings/inex",{allListings});
+    } catch(e){
+        next(e);
+    }
+    }
+);
+
 app.use ("/", userRouter);
 app.use ("/listings", listingRouter);
 // app.use ("/", listingRouter);
 app.use ("/listings/:id/reviews", reviewRouter);
-
 app.use ("/bookings",bookingRoutes);
 
+app.all("*",(req,res,next) => {
+    next(new ExpressError(404, "Page not found!"));
+});
 
 //middleware to handel async erors
 app.use((err,req,res,next)=>{
