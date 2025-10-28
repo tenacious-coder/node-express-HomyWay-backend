@@ -90,25 +90,27 @@ Screenshots of the working application:
 
 ## 💻 How to Run This Project
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/HomyWay.git
 cd HomyWay
 
-*Install Dependencies*
+### 2. Install Dependencies
 ```bash
 npm install
 
-*Set up environment variables*
+### 3. Set up environment variables
 ```Env
 MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
-*Run the server*
+### 4. Run the server
 ```bash
 npm start
 
-## 🏁 Result and Conclusion
+---
+
+### 🏁 Result and Conclusion
 The *HomyWay* platform successfully demonstrates a complete, production-level accommodation booking system built using *Node.js* and *Express* — without relying on frontend frameworks.
 
 Key achievements:
@@ -123,7 +125,7 @@ HomyWay showcases how a fully functional, scalable, and responsive web platform 
 
 ---
 
-## 🔮 Future Work
+### 🔮 Future Work
 Although the core functionalities of *HomyWay* are complete — including image uploads, calendar booking, reviews, ratings, and responsiveness — several advanced enhancements are planned for the next version:
 
 - *1️⃣ Payment Integration:*  
