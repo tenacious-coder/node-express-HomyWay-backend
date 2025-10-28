@@ -90,27 +90,28 @@ Screenshots of the working application:
 
 ## 💻 How to Run This Project
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/HomyWay.git
-cd HomyWay
+1. *Clone the repository*
+   ```bash
+   git clone https://github.com/tenacious-coder/HomyWay.git
+   cd place-pilot
 
-### 2. Install Dependencies
-```bash
-npm install
+2. *Install Dependencies*
+   ```bash
+   npm install
 
-### 3. Set up environment variables
-```Env
-MONGO_URL=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+3. *Add environment variables*
 
-### 4. Run the server
-```bash
-npm start
+   MONGODB_URL ="your_mongodb_connection_string_here"   
 
----
+   JWT_SECRET= "your_jwt_secret_here"
 
-### 🏁 Result and Conclusion
+4. *Run the server*
+   ```bash
+   npm start     
+
+
+## 🏁 Result and Conclusion
+
 The *HomyWay* platform successfully demonstrates a complete, production-level accommodation booking system built using *Node.js* and *Express* — without relying on frontend frameworks.
 
 Key achievements:
@@ -125,32 +126,30 @@ HomyWay showcases how a fully functional, scalable, and responsive web platform 
 
 ---
 
-### 🔮 Future Work
-Although the core functionalities of *HomyWay* are complete — including image uploads, calendar booking, reviews, ratings, and responsiveness — several advanced enhancements are planned for the next version:
+## 🚀 Future Work
 
-- *1️⃣ Payment Integration:*  
+- *1. Payment Integration:*  
   Add secure online payment support using *Razorpay* or *Stripe* for seamless booking transactions.
 
-- *2️⃣ Real-Time Notifications:*  
+- *2. Real-Time Notifications:*  
   Integrate *Socket.io* for instant updates on bookings, messages, and status changes.
 
 
-- *4️⃣ AI-Powered Recommendations:*  
+- *3. AI-Powered Recommendations:*  
   Suggest personalized stays based on previous searches, bookings, and reviews.
 
-- *7️⃣ Email & SMS Alerts:*  
+
+- *4. Email & SMS Alerts:*  
   Send booking confirmations, cancellations, and updates using *Nodemailer* or *Twilio*.
-
-- *8️⃣ Multi-Language & Currency Support:*  
-  Localize the app and dynamically convert prices for international users.
-
-> 🚀 These improvements will enhance HomyWay’s scalability, reliability, and real-world usability.
 
 ---
 
 ## 👩‍💻 Author and Contact
 
 *Author:* Anjali Kumari  
-*GitHub:* [Anjali Kumari]()  
-*Email:* anjalikumari70996@gmail.com  
-*LinkedIn:* [linkedin.com/in/
+
+- 📧 *Email:* [anjalikumari70996@gmail.com](anjalikumari70996@gmail.com)  
+- 🔗 *LinkedIn:* [linkedin.com/in/anjali-kumari-410264250](https://www.linkedin.com/in/anjali-kumari-410264250)  
+- 💻 *GitHub:* [github.com/tenacious-coder](https://github.com/tenacious-coder)
+
+---
