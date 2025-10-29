@@ -80,9 +80,9 @@ Screenshots of the working application:
 
 | Page | Screenshot |
 |------|-------------|
-| 🏠 Home Page | ![Home Page](screenshots/home.png) |
-| 🏘 Property Listings | ![Properties](screenshots/properties.png) |
-| 📅 Booking Page | ![Booking Page](screenshots/booking.png) |
+| 🏠 Listings Page | ![Home Page](screenshots/listings_page.png) |
+| 🏘 Property Listings | ![Properties](screenshots/particular_listing_with_bookings.png) |
+| 📅 Booking Page | ![Booking Page](screenshots/booking_info.png) |
 
 *(Make sure you place screenshots inside a folder named screenshots/ in your repo.)*
 
