@@ -79,7 +79,7 @@ Screenshots of the working application:
 
 | Page | Screenshot |
 |------|-------------|
-| 🏠 Listings Page | ![Listings Page](screenshots/listings_page.png) |
+| 🏠 Listings Page | ![Listings Page](screenshots/listings_page.pnglistings_page.png) |
 | 🏘 Property Listings | ![Properties](screenshots/particular_listing_with_bookings.png) |
 | 📅 Booking Page | ![Booking Page](screenshots/booking_info.png) |
 
