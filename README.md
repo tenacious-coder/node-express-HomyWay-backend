@@ -2,7 +2,7 @@
 
 A full-stack *Airbnb-like property booking and management platform* built entirely with *Node.js* and *Express.js*, offering users a seamless experience to explore, list, and book homes — all from one integrated application.
 
-**Live Website:** [Click here to visit HomyWay]() 
+**Live Website:** [Click here to visit HomyWay](https://apnaproject1-omb7.onrender.com/) 
 ---
 
 ## 📋 Table of Contents
@@ -80,11 +80,9 @@ Screenshots of the working application:
 
 | Page | Screenshot |
 |------|-------------|
-| 🏠 Listings Page | ![Home Page](screenshots/listings_page.png) |
+| 🏠 Listings Page | ![Listings Page](screenshots/listings_page.png) |
 | 🏘 Property Listings | ![Properties](screenshots/particular_listing_with_bookings.png) |
 | 📅 Booking Page | ![Booking Page](screenshots/booking_info.png) |
-
-*(Make sure you place screenshots inside a folder named screenshots/ in your repo.)*
 
 ---
 
