@@ -41,8 +41,8 @@ This project aims to *recreate the essential Airbnb experience* using a *minimal
 - Each listing includes:  
   - Property title, description, and address  
   - Price per night  
-  - Owner (host) details  
-  - Availability dates  
+  - Owner of the listing page  
+  - Booking option  
   - Uploaded images  
 
 ---
@@ -57,7 +57,7 @@ This project aims to *recreate the essential Airbnb experience* using a *minimal
 | *Templating / View Engine* | EJS |
 | *File Uploads* | Multer |
 | *Environment Variables* | dotenv |
-| *Hosting / Deployment* | Render / Railway / Localhost (as applicable) |
+|  *Deployment* | Render|
 
 ---
 
@@ -67,8 +67,7 @@ This project aims to *recreate the essential Airbnb experience* using a *minimal
 - 🏠 *List a Property:* Hosts can upload property details and images.  
 - 📅 *Booking System:* Users can select available dates and book their stay.  
 - 🖼 *Dynamic Image Display:* Property photos rendered directly from uploads.  
-- 🔍 *Property Details Page:* Each property has its own dedicated info page.  
-- 📬 *Announcements / Notifications:* (If implemented) Updates from hosts or admins.  
+- 🔍 *Property Details Page:* Each property has its own dedicated info page.    
 - ⚙ *Server-side Rendering (SSR):* All pages rendered dynamically via Express.  
 - 🧾 *RESTful Routes:* Clean, structured backend endpoints.
 
